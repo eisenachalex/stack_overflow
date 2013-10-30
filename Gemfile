@@ -2,6 +2,16 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'factory_girl_rails'
+
+gem 'faker'
+
+group :test do
+  gem "shoulda-matchers"
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -21,7 +31,7 @@ end
 
 gem 'jquery-rails'
 
-group :test, :devlopment do
+group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
 
