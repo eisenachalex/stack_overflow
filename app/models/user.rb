@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   attr_accessible :date_of_birth, :email, :password, :password_confirmation, :website
 
   validates :email, :presence =>true,
@@ -11,4 +12,5 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   has_secure_password
+
 end
