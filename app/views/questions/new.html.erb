@@ -1,0 +1,12 @@
+<%= form_for @question do |f| %>
+  <% @question.errors.each do |attr, msg| %>
+  <p><%= attr %><%= msg %></p>
+  <% end %>
+  <p>
+    <%= f.label :q_title, "Title" %><br/>
+    <%= f.text_field :q_title, placeholder: 'title' %><br>
+    <%= f.label :q_content, "Question" %><br/>
+    <%= f.text_area :q_content, placeholder: 'content', size: "60x12" %><br>
+    <%= f.submit %>
+  </p>
+<% end %>
