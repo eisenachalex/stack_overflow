@@ -3,9 +3,10 @@ class User < ActiveRecord::Base
 
   validates :email, :presence =>true,
                     :uniqueness=>true
-  # validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create
 
-  validates :password, :presence =>true, length: { minimum: 6 }
+  validates :password, :presence =>true
+  validates :password, length: { minimum: 6 , message: "Password needs to be at least 6 characters" }
   validates_confirmation_of :password
   validates :password_confirmation, presence: true
 
