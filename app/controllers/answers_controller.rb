@@ -5,7 +5,6 @@ class AnswersController < ApplicationController
   end
 
 
-
   def create
     @question = Question.find(params[:question_id])
     @answer = Answer.new(params[:answer])
@@ -25,8 +24,17 @@ class AnswersController < ApplicationController
 
 
   def show
-    @question = Question.find(params[:id])
-    @answer = Answer.new
+    p "params #{params}"
+    @question = Question.find(params[:question_id])
+    @answer = Answer.new(params[:answer])
   end
+
+  def destroy
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    @answer.destroy
+    redirect_to user_path
+  end
+
 
 end
