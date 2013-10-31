@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+  $("#login_link").click(function() {
+    $("#login_form").slideToggle();
+  });
+});
