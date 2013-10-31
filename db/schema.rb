@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20131030191948) do
 
-  create_table "users", :force => true do |t|
-    t.date     "date_of_birth"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "website"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-end
   create_table "questions", :force => true do |t|
     t.integer  "user_id"
     t.text     "q_content"
@@ -33,10 +25,10 @@ end
   create_table "users", :force => true do |t|
     t.date     "date_of_birth"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "website"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
