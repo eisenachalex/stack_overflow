@@ -1,12 +1,14 @@
 <h1>Welcome to Stack Overflow</h1>
 
 
-
+<table>
+<tr>
 <% @questions.each do |question| %>
 <b><%= link_to question.q_title, question_path(question) %></b><br/>
 <%= question.q_content %><br/>
 <%= question.votes %> votes <br>
 <%= distance_of_time_in_words_to_now(question.created_at) %> ago <br><br>
 <% end %>
-
+</tr>
+</table>
 
