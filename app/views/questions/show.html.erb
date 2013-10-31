@@ -6,7 +6,8 @@
 
 <% @question.answers.each do |answer| %>
 <p>
-  <%= answer.user.email if question.user %>
+  <%= answer.a_content %> <br>
+  <%= answer.user.email if @question.user %>
   <%= time_ago_in_words(answer.created_at) %>
 </p>
 <% end %>
