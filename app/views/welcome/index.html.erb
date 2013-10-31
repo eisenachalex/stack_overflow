@@ -10,3 +10,9 @@
 <%= question.votes %> votes <br>
 <%= distance_of_time_in_words_to_now(question.created_at) %> ago <br><br>
 <% end %>
+
+<%= form_for :session, url: login_path do  |f| %>
+<%= f.text_field :email, placeholder: "Email" %>
+<%= f.password_field :password, placeholder: "Password" %>
+<%= f.submit %>
+<% end %>
