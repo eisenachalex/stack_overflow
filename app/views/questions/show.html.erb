@@ -5,8 +5,11 @@
 
 
 <% @question.answers.each do |answer| %>
-<p></p>
-
+<p>
+  <%= answer.user.email if question.user %>
+  <%= time_ago_in_words(answer.created_at) %>
+</p>
+<% end %>
 
 <%= form_for([@question, @answer]) do |f| %><br>
  <b><%= f.label :a_content, "Your Answer:" %><br/><b>
