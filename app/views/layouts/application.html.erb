@@ -7,14 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<head>
+</head>
+
 <header>
 <%= link_to "Stack Overflow", root_path, html_options = {id: "logo"} %>
 <%= link_to "Ask a Question" %>
 <%= link_to "Profile", user_path(1) %>
 <%= link_to "Sign up", new_user_path %>
-<%= link_to "Login/Logout", root_path, html_options = {id: "login_link"} %>
+<% if current_user %>
+<%= link_to "Log Out", logout_path  %>
+<% else %>
+<%= link_to "Login", 'javascript:;', html_options = {id: "login_link"} %>
+<% end %>
 </header>
 <div class="container">
+
+
+  <%= form_for :session, url: login_path, html: {id: "login_form"} do  |f| %>
+<%= f.text_field :email, placeholder: "Email" %>
+<%= f.password_field :password, placeholder: "Password" %>
+<%= f.submit "Log in" %>
+<% end %>
+
 <%= yield %>
 </div>
 </body>

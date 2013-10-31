@@ -1,5 +1,9 @@
 StackOverflow::Application.routes.draw do
 
+
+  get 'sessions/logout' => 'sessions#destroy', as: :logout
+  post 'sessions/new' => 'sessions#new', as: :login
+
   resources :users
   resources :questions do
     resources :answers
