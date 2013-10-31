@@ -13,11 +13,13 @@
 
 <header>
 <%= link_to "Stack Overflow", root_path, html_options = {id: "logo"} %>
-<%= link_to "Ask a Question" %>
-<%= link_to "Profile", user_path(1) %>
+<%= link_to "Ask a Question", new_question_path %>
 <%= link_to "Sign up", new_user_path %>
 <% if current_user %>
+<div id="profile_nav">
+Signed in as <%= link_to current_user.email, user_path(current_user.id), html_options = {class: "profile_link"} %>
 <%= link_to "Log Out", logout_path  %>
+</div>
 <% else %>
 <%= link_to "Login", 'javascript:;', html_options = {id: "login_link"} %>
 <% end %>
