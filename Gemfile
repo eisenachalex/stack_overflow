@@ -4,14 +4,14 @@ gem 'rails', '3.2.13'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-
 gem 'factory_girl_rails'
 
 gem 'faker'
 
-
-
 gem 'sqlite3'
+
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Gems used only for assets and not required

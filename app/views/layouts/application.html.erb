@@ -10,7 +10,7 @@
 <header>
 <%= link_to "Stack Overflow", root_path, html_options = {id: "logo"} %>
 <%= link_to "Ask a Question" %>
-<%= link_to "Profile" %>
+<%= link_to "Profile", user_path(1) %>
 <%= link_to "Sign up", new_user_path %>
 <%= link_to "Login/Logout", root_path, html_options = {id: "login_link"} %>
 </header>
