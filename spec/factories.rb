@@ -5,4 +5,11 @@ FactoryGirl.define do
     password_confirmation "password"
     date_of_birth Time.gm(Random.rand(1950..2000),Random.rand(1..12),Random.rand(1..28))
   end
+
+  factory :question do
+    user_id Random.rand(1..10)
+    q_content Faker::Lorem.sentence
+    q_title Faker::Company.bs
+    votes Random.rand(1..500)
+  end
 end

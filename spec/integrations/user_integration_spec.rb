@@ -13,12 +13,18 @@ feature 'User Abilities' do
        }.to change(User, :count).by(1)
     end
 
-    it "can visit their account and edit a field" do
-      #test
+    it "can login" do
+      visit '/'
+      within("#login_form") do
+        fill_in 'session_email', :with => 'steve@email.com'
+        fill_in 'session_password', :with => 'password'
+      end
+      save_and_open_page
+      click_button 'Log in'
     end
   end
 
-  context "When a new user is created, a session is created"
+  context "When a new user is created, a session is created" do
     #test
   end
 end
