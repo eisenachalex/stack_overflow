@@ -8,6 +8,7 @@
 <% @questions.each do |question| %>
 <%= question.q_title %><br/>
 <%= question.q_content %><br/>
+<%= link_to "Edit", edit_question_path(question) %>
 <%= link_to "destroy", question_path(question), method: :delete,
     confirm: "Are you sure?" %><br><br>
 <% end %>
@@ -15,6 +16,7 @@
 <h3>Your answers</h3>
 <% @answers.each do |answer| %>
 <%= answer.a_content %><br/>
+<%= link_to "Edit", edit_question_answer_path(answer.question_id, answer) %>
 <%= link_to "destroy", question_answer_path(answer.question_id, answer), method: :delete,
     confirm: "Are you sure?" %><br><br>
 <% end %>

@@ -19,3 +19,5 @@ FactoryGirl.define do
     q_title Faker::Company.bs
     votes Random.rand(1..500)
 end
+
+end
