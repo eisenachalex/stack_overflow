@@ -2,7 +2,17 @@ StackOverflow::Application.routes.draw do
 
 
 
-  resources :users
+  # resources :users
+
+  get '/users' => 'users#index'
+  post '/users' => 'users#create'
+  get '/user/new' => 'users#new'
+  get '/user/edit' => 'users#edit'
+  get '/user' => 'users#show'
+  put '/user' => 'users#update'
+  delete '/users' => 'users#destroy'
+
+
   resources :questions do
     resources :answers
   end
