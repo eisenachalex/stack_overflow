@@ -7,16 +7,25 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(params[:question])
+    if current_user
+      @question.user = current_user
       if @question.save
         redirect_to root_path
       else
         render '/questions/new'
       end
+    else
+      redirect_to new_user_path
+    end
   end
 
 
   def new
+    if current_user
     @question = Question.new
+    else
+      redirect_to new_user_path
+    end
   end
 
   def show

@@ -1,8 +1,6 @@
 <h1>Welcome to Stack Overflow</h1>
 
 
-<%= link_to "Submit a new question?", new_question_path %><br><br>
-
 
 <% @questions.each do |question| %>
 <b><%= link_to question.q_title, question_path(question) %></b><br/>
