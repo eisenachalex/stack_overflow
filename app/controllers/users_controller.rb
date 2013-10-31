@@ -17,6 +17,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @questions = Question.where(user_id: @user.id)
+    @answers = Answer.where(user_id: @user.id)
   end
 
 end

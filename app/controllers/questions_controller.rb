@@ -1,10 +1,9 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.order("updated_at DESC")
+    @questions = Question.order("votes ASC")
+
   end
-
-
   def create
     @question = Question.new(params[:question])
     if current_user
@@ -31,6 +30,19 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    Answer.delete_all(question_id: @question.id)
+    @question.destroy
+    redirect_to user_path
   end
 
 end

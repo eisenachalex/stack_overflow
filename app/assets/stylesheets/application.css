@@ -73,6 +73,7 @@ header a {
 
 .container {
   margin:10px;
+  background-color:#e8e8e8;
 }
 
 #login_form {
