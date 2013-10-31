@@ -7,9 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<head>
-</head>
+<header>
+<%= link_to "Stack Overflow", root_path, html_options = {id: "logo"} %>
+<%= link_to "Ask a Question" %>
+<%= link_to "Profile" %>
+<%= link_to "Sign up", new_user_path %>
+<%= link_to "Login/Logout", root_path, html_options = {id: "login_link"} %>
+</header>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>
