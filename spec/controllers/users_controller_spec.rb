@@ -1,24 +1,29 @@
 require 'spec_helper'
-require 'faker'
 
-feature 'User Abilities' do
-  context "user should be able to do stuff..." do
-    it "can create a new account" do
-      visit 'http://localhost:3000/users/new'
-      expect {
-         fill_in 'user_email',   with: Faker::Internet.email
-         fill_in 'user_password', with: "testemail"
-         fill_in 'user_password_confirmation', with: "testemail"
-         click_button "Create"
-       }.to change(User, :count).by(1)
+
+describe UsersController do
+  context "with render_views" do
+    render_views
+
+    describe "GET new" do
+      it "renders the new template" do
+        get :new
+        expect(response).to render_template("new")
+      end
+
+      it "the new template has a sign up form with an input field email" do
+        get :new
+        expect(response.body).to match(/input id="user_email"/)
+      end
     end
 
-    it "can visit their account and edit a field" do
-      #test
+    describe "POST create" do
+      it "creates a new user" do
+        expect { post :create,
+                user: FactoryGirl.attributes_for(:user)
+        }.to change(User, :count).by(1)
+      end
     end
-  end
 
-  context "When a new user is created, a session is created"
-    #test
   end
 end
