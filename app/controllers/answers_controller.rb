@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
         render '/question'
       end
     else
-      redirect_to questions_path(params[:id])
+      redirect_to new_user_path
     end
   end
 
