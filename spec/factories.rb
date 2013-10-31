@@ -20,3 +20,5 @@ FactoryGirl.define do
     votes Random.rand(1..500)
   end
 end
+
+end

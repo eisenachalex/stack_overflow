@@ -1,0 +1,7 @@
+<h1>Edit<span style="font-style:italic"> <%= @answer.a_content %></span></h1>
+
+<%= form_for ([@question, @answer]) do |f| %>
+  <%= f.label :a_content, "Your Answer:" %><br/>
+  <%= f.text_area :a_content, placeholder: 'Type your response...', size: "60x12" %><br>
+  <%= f.submit %>
+<%end%>
