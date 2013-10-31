@@ -33,6 +33,6 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-
+  gem 'selenium-webdriver'
 end
 
