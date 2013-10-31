@@ -4,8 +4,29 @@ class AnswersController < ApplicationController
      @answer = Answer.new
   end
 
-  def new
-    @answer = Answer.new
+
+
+  def create
     @question = Question.find(params[:question_id])
+    @answer = Answer.new(params[:answer])
+    @answer.question_id = @question.id
+
+    if current_user
+      @answer.user = current_user
+      if @answer.save
+        redirect_to question_path(@question, @answer)
+      else
+        render '/question'
+      end
+    else
+      redirect_to new_user_path
+    end
   end
+
+
+  def show
+    @question = Question.find(params[:id])
+    @answer = Answer.new
+  end
+
 end
