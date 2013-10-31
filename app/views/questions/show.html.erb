@@ -1,5 +1,15 @@
-<h1><%= @question.q_title %></h1>
+
+
+<b><%= @question.q_title %></b><br>
 <%= @question.q_content %>
 
 
+<% @question.answers.each do |answer| %>
+<p></p>
 
+
+<%= form_for([@question, @answer]) do |f| %><br>
+ <b><%= f.label :a_content, "Your Answer:" %><br/><b>
+  <%= f.text_area :a_content, placeholder: 'Type your response...', size: "60x12" %><br>
+ <%= f.submit %>
+<% end %>
