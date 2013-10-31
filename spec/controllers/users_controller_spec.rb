@@ -2,6 +2,13 @@ require 'spec_helper'
 
 
 describe UsersController do
+  before :each do
+    user = User.create(email: Faker::Internet.email, password: "password",
+                     password_confirmation: "password",
+                     date_of_birth: Time.gm(rand(1950..2000),rand(1..12),rand(1..28)))
+    session[:user_id] = user.id
+  end
+
   context "with render_views" do
     render_views
 
@@ -22,6 +29,15 @@ describe UsersController do
         expect { post :create,
                 user: FactoryGirl.attributes_for(:user)
         }.to change(User, :count).by(1)
+      end
+    end
+
+    describe "GET show" do
+      it "renders the show template" do
+        @user = stub_model(User)
+        User.stub!(:find).and_return(@user)
+        get :show, :id => @user.id
+        expect(response).to render_template("show")
       end
     end
 

@@ -12,4 +12,10 @@ FactoryGirl.define do
     q_title Faker::Company.bs
     votes Random.rand(1..500)
   end
+
+  factory :answer do
+    user_id Random.rand(1..10)
+    q_content Faker::Lorem.sentence
+    q_title Faker::Company.bs
+    votes Random.rand(1..500)
 end

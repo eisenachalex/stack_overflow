@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QuestionsController do
+describe AnswersController do
   before :each do
     user = User.create(email: Faker::Internet.email, password: "password",
                      password_confirmation: "password",
@@ -8,8 +8,7 @@ describe QuestionsController do
     session[:user_id] = user.id
   end
 
-context "with render_views" do
-    render_views
+
 
     describe "GET index" do
       it "renders the index template" do
@@ -49,5 +48,4 @@ context "with render_views" do
 
   end
 end
-
 

@@ -25,6 +25,6 @@ feature 'User Abilities' do
   end
 
   context "When a new user is created, a session is created" do
-    #test
+
   end
 end
