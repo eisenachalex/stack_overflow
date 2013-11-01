@@ -9,6 +9,8 @@ StackOverflow::Application.routes.draw do
     resources :answers
   end
 
+  resources :tags
+
   root to: 'welcome#index'
 
 

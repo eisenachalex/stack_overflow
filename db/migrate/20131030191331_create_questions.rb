@@ -6,6 +6,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :q_title
       t.integer :votes, default: 0
 
+
       t.timestamps
     end
   end
