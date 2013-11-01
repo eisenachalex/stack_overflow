@@ -117,3 +117,8 @@ td {
   padding-left: 10px;
   padding-right: 8px;
 }
+
+
+#search_form {
+float:right; 
+}

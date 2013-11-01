@@ -3,6 +3,7 @@ StackOverflow::Application.routes.draw do
 
   get 'sessions/logout' => 'sessions#destroy', as: :logout
   post 'sessions/new' => 'sessions#new', as: :login
+  post 'search' => 'welcome#search'
 
   resources :users
   resources :questions do
