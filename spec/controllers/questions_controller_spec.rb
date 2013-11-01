@@ -6,7 +6,12 @@ describe QuestionsController do
                      password_confirmation: "password",
                      date_of_birth: Time.gm(rand(1950..2000),rand(1..12),rand(1..28)))
     session[:user_id] = user.id
+    @question = Question.create(user_id: rand(1..10), q_content: Faker::Company.bs,
+                                 q_title: Faker::Company.catch_phrase, votes: rand(1..10))
+    @answer = Answer.create(question_id: rand(1..10), user_id: rand(1..10),
+                            a_content: Faker::Company.catch_phrase, votes: rand(1..10))
   end
+
 
 context "with render_views" do
     render_views
@@ -15,6 +20,12 @@ context "with render_views" do
       it "renders the index template" do
         get :index
         expect(response).to render_template("index")
+      end
+
+      it "can click on a question title to go to that question's page" do
+        visit root_path
+        click_link @question.q_title
+        page.should have_content(@question.q_title)
       end
     end
 
@@ -38,7 +49,7 @@ context "with render_views" do
       end
     end
 
-    describe "GET show" do
+    describe "GET show" date_of_birth
       it "renders the show template" do
         @question = stub_model(Question)
         Question.stub!(:find).and_return(@question)
@@ -46,6 +57,12 @@ context "with render_views" do
         expect(response).to render_template("show")
       end
     end
+
+    # describe "DELETE destroy" do
+    #   it "allows a user to destroy their created question" do
+    #     expect { delete :destroy, @question }.to change(Question, :count).by(1)
+    #   end
+    # end
 
   end
 end

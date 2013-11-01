@@ -7,10 +7,17 @@ describe AnswersController do
                      date_of_birth: Time.gm(rand(1950..2000),rand(1..12),rand(1..28)))
     session[:user_id] = user.id
   end
+
   describe "#create" do
-    it "on save, new question should have user id"
-
-
+    it "on save, new answer should have question id"
   end
+
+
+
+
+
+
+
+
 end
 
