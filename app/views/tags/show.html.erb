@@ -4,6 +4,8 @@
 <table>
 
     <tr>
-      <td><%= @question.q_title %> </td>
+      <% @questions.each do |question| %>
+        <td><%= question.q_title %> </td>
+      <% end %>
     </tr>
 </table>
