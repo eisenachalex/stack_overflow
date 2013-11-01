@@ -8,7 +8,7 @@
     question_answer = Question.create(user_id: user.id, q_content: question, q_title: title, votes: rand(1..500))
     2.times do
       tag_name = Faker::Company.bs
-      Tag.create(question_id: question_answer.id, t_content: tag_name)
+      question_answer.tags << Tag.where(t_content: tag_name).first_or_create
     end
     5.times do
       answer = Faker::Lorem.paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)

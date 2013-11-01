@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
       @question.user = current_user
       if @question.save
         @tags.each do |tag|
-          @question.tags << Tag.create(t_content: tag[0])
+          @question.tags << Tag.where(t_content: tag[0]).first_or_create
         end
         redirect_to root_path
       else
