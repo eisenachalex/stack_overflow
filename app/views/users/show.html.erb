@@ -2,7 +2,13 @@
 
 <b>Welcome back, <%= @user.email %></b>
 
-
+<p>
+  <% if @user.photo %>
+    <%= image_tag(@user.photo.file.url(:thumb)) %>
+  <% else %>
+    <%= image_tag "silhouette.jpg" %>
+  <% end %>
+</p>
 
 <h3>Your questions:</h3>
 <% @questions.each do |question| %>
