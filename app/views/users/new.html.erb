@@ -2,10 +2,14 @@
 <h1>Please sign up or log in </h1>
 
 
-<%= form_for @user do |f| %>
+<%= form_for @user, html: { multipart: true } do |f| %>
   <p><%= f.text_field :email, placeholder: "email" %></p>
   <p><%= f.password_field :password, placeholder: "password" %></p>
   <p><%= f.password_field :password_confirmation, placeholder: "password confirmation" %></p>
+  <p>Upload a profile picture:</p>
+  <%= fields_for :photo, @user.photo do |photo_fields|%>
+    <p><%= photo_fields.file_field :photo %></p>
+  <% end %>
   <p><%= f.submit "Create" %></p>
 
 <% end %>

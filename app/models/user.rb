@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :date_of_birth, :email, :password, :password_confirmation, :website
+  attr_accessible :date_of_birth, :email, :password, :password_confirmation, :website, :photo
 
   validates :email, :presence =>true,
                     :uniqueness=>true
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :comments
   has_many :badges
-  has_one :picture
+  has_one :photo
 
   has_secure_password
 end
