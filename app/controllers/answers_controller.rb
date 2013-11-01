@@ -46,5 +46,4 @@ class AnswersController < ApplicationController
     @answer.update_attributes(params[:answer])
     redirect_to user_path
   end
-
 end
