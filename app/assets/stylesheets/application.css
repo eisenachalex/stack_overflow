@@ -16,6 +16,7 @@ body {
   margin:0px;
   padding:0px;
   font-family: arial;
+  background-color:#e8e8e8
 }
 
 header {
@@ -72,6 +73,7 @@ header a {
 
 .container {
   margin:10px;
+  margin-top:2px;
   background-color:#e8e8e8;
 }
 
@@ -109,4 +111,9 @@ header a {
 
 tr:before {
   border-top:1px solid gray;
+}
+
+td {
+  padding-left: 10px;
+  padding-right: 8px;
 }
