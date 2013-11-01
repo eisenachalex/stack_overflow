@@ -3,7 +3,8 @@ class Question < ActiveRecord::Base
 
   belongs_to :user
   has_many :answers
-  has_many :tags
+  has_many :question_tags
+  has_many :tags, through: :question_tags
 
   validates :q_title, presence: :true
   validates :q_content, presence: :true

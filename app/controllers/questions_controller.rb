@@ -6,9 +6,13 @@ class QuestionsController < ApplicationController
   end
   def create
     @question = Question.new(params[:question])
+    @tags = params[:tags][:t_content].scan(/(\w+)/)
     if current_user
       @question.user = current_user
       if @question.save
+        @tags.each do |tag|
+          @question.tags << Tag.where(t_content: tag[0]).first_or_create
+        end
         redirect_to root_path
       else
         render '/questions/new'

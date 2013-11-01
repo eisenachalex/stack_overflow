@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131031223205) do
+ActiveRecord::Schema.define(:version => 20131101201809) do
 
   create_table "answers", :force => true do |t|
     t.text     "a_content"
     t.integer  "user_id"
     t.integer  "question_id"
     t.integer  "votes"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "file"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "question_tags", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "tag_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -32,10 +46,9 @@ ActiveRecord::Schema.define(:version => 20131031223205) do
   end
 
   create_table "tags", :force => true do |t|
-    t.integer  "question_id"
     t.string   "t_content"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
