@@ -40,5 +40,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'nyan-cat-formatter'
 end
 
