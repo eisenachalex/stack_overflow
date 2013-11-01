@@ -2,10 +2,7 @@
 
 
 <table>
-
-    <tr>
       <% @questions.each do |question| %>
-        <td><%= question.q_title %> </td>
+        <tr><td><%= link_to question.q_title, question_path(question) %> </td></tr>
       <% end %>
-    </tr>
 </table>
