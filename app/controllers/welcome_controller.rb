@@ -7,7 +7,8 @@ class WelcomeController < ApplicationController
   		p params
   		@var = params[:search_term]
         @questions = Question.where('q_title LIKE ?', "%#{@var}%").all
-
+		
         render "search", layout: false
+        
   end
 end

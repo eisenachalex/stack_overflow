@@ -25,9 +25,12 @@ Signed in as <%= link_to current_user.email, user_path(current_user.id), html_op
 <% end %>
 
 
+
 <%= form_for(:welcome, remote: true, url: root_path, html: {id: "search_form"}) do |f| %>
-<%= f.text_field :search_input, id: "search_input" %>
-<%= f.submit "Search" %>
+<%= f.text_field :search_input, placeholder: "Search Questions", id: "search_input" %>
+<ul id="search_bar_results">
+
+</ul>
 <% end %>
 
 

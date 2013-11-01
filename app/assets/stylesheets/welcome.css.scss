@@ -1,3 +1,42 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#search_form {
+position:relative;
+}
+
+#search_input {
+padding:3px 5px;
+background-color:black;
+margin-right:20px;
+border:none;
+color:white;
+height:20px;
+line-height:20px;
+width:200px;
+}
+
+
+#search_bar_results  {
+ position:absolute;
+ top:0px;
+ left:0px;
+ list-style-type:none;
+ margin:0px;
+ padding:0px;
+ top:40px;
+ font-size:11px;
+ color:white;
+
+}
+
+#search_bar_results li {
+padding:3px 5px;
+height:20px;
+line-height:20px;
+background-color:black;
+border-bottom:1px dotted white;
+width:200px;
+}

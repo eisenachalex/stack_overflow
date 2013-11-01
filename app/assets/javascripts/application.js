@@ -28,6 +28,7 @@ $(document).ready(function(){
 		data = {search_term: input}
 		$.post('/search', data, function(response) {
 			$(".container").html(response);
+			console.log(response);
 		});
   });
 });
