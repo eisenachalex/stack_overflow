@@ -7,7 +7,9 @@
   <p><%= f.password_field :password, placeholder: "password" %></p>
   <p><%= f.password_field :password_confirmation, placeholder: "password confirmation" %></p>
   <p>Upload a profile picture:</p>
-  <p><%= f.file_field :photo %></p>
+  <%= fields_for :photo, @user.photo do |photo_fields|%>
+    <p><%= photo_fields.file_field :photo %></p>
+  <% end %>
   <p><%= f.submit "Create" %></p>
 
 <% end %>

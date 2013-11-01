@@ -2,7 +2,7 @@
 
 <b>Welcome back, <%= @user.email %></b>
 
-<%= @photo.photo %>
+<p><%= image_tag(@user.photo.file.url(:thumb)) %></p>
 
 <h3>Your questions:</h3>
 <% @questions.each do |question| %>

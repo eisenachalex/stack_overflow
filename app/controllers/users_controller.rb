@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if params[:photo]
       params[:photo].each do |k, v|
-        @user.photo << Photo.create(file :v)
+        @user.photo = Photo.create(file: v)
       end
     end
 
