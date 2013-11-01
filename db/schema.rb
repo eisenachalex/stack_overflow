@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131031223205) do
+ActiveRecord::Schema.define(:version => 20131101153450) do
 
   create_table "answers", :force => true do |t|
     t.text     "a_content"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20131031223205) do
     t.integer  "votes"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "file"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "questions", :force => true do |t|
@@ -43,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20131031223205) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "website"
+    t.string   "file"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

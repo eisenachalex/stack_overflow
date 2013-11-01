@@ -7,6 +7,12 @@ class UsersController < ApplicationController
     # render text: params[:user].inspect
     @user = User.new(params[:user])
 
+    if params[:photo]
+      params[:photo].each do |k, v|
+        @user.photo << Photo.create(file :v)
+      end
+    end
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
