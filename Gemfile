@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'omniauth-facebook', '1.4.0'
+
+gem 'omniauth-twitter'
+
+gem 'twitter'
+
 gem 'rails', '3.2.13'
 
 gem 'bcrypt-ruby', '~> 3.0.0'

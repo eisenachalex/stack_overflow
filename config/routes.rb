@@ -1,5 +1,8 @@
 StackOverflow::Application.routes.draw do
 
+  get   '/login', :to => 'sessions#new', :as => :login
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
 
   get 'sessions/logout' => 'sessions#destroy', as: :logout
   post 'sessions/new' => 'sessions#new', as: :login

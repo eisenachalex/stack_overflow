@@ -11,6 +11,20 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create
+    auth_hash = request.env['omniauth.auth']
+    @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["code"])
+    if @authorization
+      render :text => "Welcome back #{@authorization.user.name}! You have already signed up."
+    else
+      user = User.new :name => auth_hash["user"]["name"], :email => auth_hash["user"]["email"]
+      user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash["code"]
+      user.save
+  
+      render :text => "Hi #{user.name}! You've signed up."
+    end
+  end 
+
   def destroy
     session.clear
     redirect_to root_path
