@@ -70,7 +70,6 @@ header a {
   float:right;
 }
 
-
 .container {
   margin:10px;
   background-color:#e8e8e8;
@@ -85,4 +84,29 @@ header a {
   top:50px;
   border-bottom-left-radius:10px;
   display:none;
+}
+
+.tags {
+  display:inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+.tags a{
+  background-color:#E0EAF1;
+  border:1px solid #b3cee1;
+  box-shadow: 2px 2px 2px 2px #ccc;
+  text-decoration: none;
+  color: #0077cc;
+  padding: 2px;
+}
+
+.tags a:hover {
+  background-color: #828CBD;
+  color: white;
+}
+
+tr:before {
+  border-top:1px solid gray;
 }
