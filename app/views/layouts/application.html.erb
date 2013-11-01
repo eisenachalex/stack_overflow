@@ -23,6 +23,15 @@ Signed in as <%= link_to current_user.email, user_path(current_user.id), html_op
 <% else %>
 <%= link_to "Login", 'javascript:;', html_options = {id: "login_link"} %>
 <% end %>
+
+
+<%= form_for(:welcome, remote: true, url: root_path, html: {id: "search_form"}) do |f| %>
+<%= f.text_field :search_input, id: "search_input" %>
+<%= f.submit "Search" %>
+<% end %>
+
+
+
 </header>
 <div class="container">
 

@@ -1,0 +1,19 @@
+<h2>Top Questions:</h2>
+<table>
+
+    <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.votes %> votes</td>
+      <td><%= question.answers.count %> answers</td>
+      <td><b><%= link_to question.q_title, question_path(question) %></b></td>
+      <td><%= question.q_content %><br>
+          <% question.tags.each do |tag| %>
+            <%= render partial: "tags/tag_button", locals: {tag: tag} %>
+          <% end %>
+      </td>
+      <td><b><%= distance_of_time_in_words_to_now(question.created_at) %> ago</b></td>
+      </tr>
+    <% end %>
+
+</table>
+

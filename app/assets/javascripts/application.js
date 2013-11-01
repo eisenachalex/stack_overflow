@@ -19,3 +19,15 @@ $(document).ready(function(){
     $("#login_form").slideToggle();
   });
 });
+
+
+$(document).ready(function(){
+
+	$("#search_input").keyup(function() {
+		var input = this.value
+		data = {search_term: input}
+		$.post('/search', data, function(response) {
+			$(".container").html(response);
+		});
+  });
+});
