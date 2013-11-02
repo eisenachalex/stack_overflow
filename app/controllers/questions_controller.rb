@@ -53,7 +53,17 @@ class QuestionsController < ApplicationController
   end
 
   def vote
-
+      @question = Question.find(params[:id])
+      puts params
+      puts "----------------------------------------------------"
+      passed_data = params.first[0]
+      if request.xhr?
+        @question.update_attributes(votes: @question.votes += passed_data.to_i)
+        # render :nothing => true
+        # puts "-----------------------------------------------------------"
+        # puts @question.votes.to_json
+        render json: @question.votes.to_json
+      end
   end
 
 end

@@ -4,9 +4,9 @@
     <% @questions.each do |question| %>
     <tr>
       <td style="width:75px;">
-        <%= link_to image_tag('http://upload.wikimedia.org/wikipedia/en/7/72/Dark_Green_Arrow_Up.png'), vote_path(question), html_options = { class: id="flex-next" } %>
+        <%= link_to image_tag('http://upload.wikimedia.org/wikipedia/en/7/72/Dark_Green_Arrow_Up.png'), vote_path(question), html_options = { class: "increase-vote", data: 1, remote: true } %>
         <div style="float:left;clear:left;text-align:center"><%= question.votes %></div>
-        <%= link_to image_tag('http://images2.wikia.nocookie.net/__cb20090706115259/manchesterunited/images/thumb/1/1c/Red_Arrow_Down.png/480px-Red_Arrow_Down.png'), vote_path(question), html_options = { class: id="flex-prev" } %>
+        <%= link_to image_tag('http://images2.wikia.nocookie.net/__cb20090706115259/manchesterunited/images/thumb/1/1c/Red_Arrow_Down.png/480px-Red_Arrow_Down.png'), vote_path(question), html_options = { class: id="decrease-vote", data: -1, remote: true } %>
 
       </td>
       <td><%= question.answers.count %> answers</td>

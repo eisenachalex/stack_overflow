@@ -158,7 +158,7 @@ background-color:gainsboro;
   float:right;
 }
 
-.flex-next img{
+.increase-vote img{
   width:30px;
   height:30px;
   float:left;
@@ -166,7 +166,7 @@ background-color:gainsboro;
   text-align:center;
 }
 
-.flex-prev img{
+.decrease-vote img{
   width:30px;
   height:30px;
   float:left;
