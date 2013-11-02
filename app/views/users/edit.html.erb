@@ -1,0 +1,21 @@
+<h2>Edit your profile</h2>
+
+
+<%= form_for @user, html: { multipart: true } do |f| %>
+  <h3>Change your profile picture</h3>
+    <%= fields_for :photo, @user.photo do |photo_fields|%>
+    <p><%= photo_fields.file_field :file %></p>
+  <% end %>
+	<%= f.label :name, "Name:" %>
+  	<%= f.text_field :name %><br><br>
+  <%= f.label :website, "Website:" %>
+ 		<%= f.text_field :website %><br><br>
+ 	<%= f.label :current_city, "Current city:" %>
+  	<%= f.text_field :current_city %><br><br>
+ 	<%= f.label :date_of_birth, "Date of birth:" %>
+  		<%= f.date_select :date_of_birth, :start_year => 1945 %><br><br>
+  <%= f.label :interests, "Interests:" %>
+  	<%= f.text_area :interests, size: "60x12" %><br>
+  <%= f.submit %>
+
+	<% end %>

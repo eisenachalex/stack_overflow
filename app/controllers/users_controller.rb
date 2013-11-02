@@ -24,4 +24,17 @@ class UsersController < ApplicationController
     @answers = Answer.where(user_id: @user.id)
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    if params[:photo]
+      @user.photo = Photo.create(file: params[:photo][:file])
+    end
+    redirect_to user_path
+  end
+
 end

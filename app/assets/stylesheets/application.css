@@ -27,56 +27,57 @@ header {
   line-height:50px;
   /* IE10 Consumer Preview */
 background-image: -ms-linear-gradient(top, #474747 0%, #000000 100%);
-
 /* Mozilla Firefox */
 background-image: -moz-linear-gradient(top, #474747 0%, #000000 100%);
-
 /* Opera */
 background-image: -o-linear-gradient(top, #474747 0%, #000000 100%);
-
 /* Webkit (Safari/Chrome 10) */
 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #474747), color-stop(1, #000000));
-
 /* Webkit (Chrome 11+) */
 background-image: -webkit-linear-gradient(top, #474747 0%, #000000 100%);
-
 /* W3C Markup, IE10 Release Preview */
 background-image: linear-gradient(to bottom, #474747 0%, #000000 100%);
 }
-
 header a {
   text-decoration:none;
   color:white;
     font-size:14px;
   padding-right:20px;
 }
-
-#profile_nav
-{
+#profile_nav {
   float:right;
 }
-
 .profile_link {
   color:red;
 }
-
 #logo {
   color:white;
   font-size:30px;
   text-decoration:none;
-  margin-left:10px;
+  margin-left:20px;
 }
-
+#logo:hover {
+  color:red;
+}
 #login_link {
   float:right;
 }
-
+#ask {
+  margin-right: 240px;
+  color: #b3cee1;
+}
+a {
+  color: teal;
+  text-decoration: none;
+}
+#q_titles a:hover {
+  color: #828CBD;
+}
 .container {
   margin:10px;
   margin-top:2px;
   background-color:#e8e8e8;
 }
-
 #login_form {
   padding:20px;
   background-color:black;
@@ -87,14 +88,11 @@ header a {
   border-bottom-left-radius:10px;
   display:none;
 }
-
 .tags {
   display:inline-block;
   margin-bottom: 10px;
   margin-top: 10px;
-
 }
-
 .tags a{
   background-color:#E0EAF1;
   border:1px solid #b3cee1;
@@ -103,22 +101,66 @@ header a {
   color: #0077cc;
   padding: 2px;
 }
-
 .tags a:hover {
   background-color: #828CBD;
   color: white;
 }
-
 tr:before {
   border-top:1px solid gray;
 }
-
 td {
   padding-left: 10px;
   padding-right: 8px;
 }
-
-
 #search_form {
 float:right; 
 }
+#left {
+float:left;
+margin-left: 80px;
+margin-right:40px;
+margin-bottom: 40px;
+width: 40%;
+border: 3px solid white;
+background-color:gainsboro;
+}
+#right {
+float:right;
+margin-left: 40px;
+margin-right:80px;
+border: 3px solid white;
+width: 40%;
+background-color:gainsboro;
+}
+#personal_info {
+  padding: 30px;
+  padding-top: 20px;
+}
+#your_stuff {
+  padding: 30px;
+  padding-top: 10px;
+  height: 100%;
+}
+#welcome {
+  margin-left:80px;
+  color:darkslategray;
+}
+#photo {
+  text-align: center;
+}
+#personal_info_title {
+  text-align: center;
+}
+.edit_links {
+  margin-left: 30px;
+  float:right;
+}
+.delete_links{
+  margin-left: 30px;
+  float:right;
+}
+
+
+
+
+

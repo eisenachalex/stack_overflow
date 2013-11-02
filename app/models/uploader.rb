@@ -9,6 +9,6 @@ class Uploader < CarrierWave::Uploader::Base
   process resize_to_limit: [800, 800]
 
   version :thumb do
-    process resize_to_fill: [200, 200]
+    process resize_to_fill: [250, 250]
   end
 end

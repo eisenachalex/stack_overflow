@@ -9,7 +9,6 @@
   <body>
     <header>
       <%= link_to "Stack Overflow", root_path, html_options = {id: "logo"} %>
-      <%= link_to "Ask a Question", new_question_path %>
       <% if current_user %>
         <div id="profile_nav">
           Signed in as <%= link_to current_user.email, user_path(current_user.id), html_options = {class: "profile_link"} %>
@@ -24,6 +23,7 @@
         <ul id="search_bar_results">
 
         </ul>
+        <%= link_to "Ask a Question", new_question_path, html_options = {id: "ask"} %>
       <% end %>
     </header>
     <div class="container">
