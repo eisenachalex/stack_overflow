@@ -108,12 +108,10 @@ a {
 tr:before {
   border-top:1px solid gray;
 }
-td {
-  padding-left: 10px;
-  padding-right: 8px;
-}
+
+
 #search_form {
-float:right; 
+float:right;
 }
 #left {
 float:left;
@@ -160,7 +158,31 @@ background-color:gainsboro;
   float:right;
 }
 
+.flex-next img{
+  width:30px;
+  height:30px;
+  float:left;
+  clear:left;
+  text-align:center;
+}
 
+.flex-prev img{
+  width:30px;
+  height:30px;
+  float:left;
+  clear:left;
+  text-align:center;
+}
 
+table {
+  border-collapse: seperate
+}
+
+td{
+  border-bottom:1px solid gray;
+  height: 110px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 

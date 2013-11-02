@@ -5,6 +5,8 @@ StackOverflow::Application.routes.draw do
   post 'sessions/new' => 'sessions#new', as: :login
   post 'search' => 'welcome#search'
 
+  post 'questions/:id' => 'questions#vote', as: :vote
+
   resources :users
   resources :questions do
     resources :answers

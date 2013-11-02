@@ -3,7 +3,12 @@
 
     <% @questions.each do |question| %>
     <tr>
-      <td><%= question.votes %> votes</td>
+      <td style="width:75px;">
+        <%= link_to image_tag('http://upload.wikimedia.org/wikipedia/en/7/72/Dark_Green_Arrow_Up.png'), vote_path(question), html_options = { class: id="flex-next" } %>
+        <div style="float:left;clear:left;text-align:center"><%= question.votes %></div>
+        <%= link_to image_tag('http://images2.wikia.nocookie.net/__cb20090706115259/manchesterunited/images/thumb/1/1c/Red_Arrow_Down.png/480px-Red_Arrow_Down.png'), vote_path(question), html_options = { class: id="flex-prev" } %>
+
+      </td>
       <td><%= question.answers.count %> answers</td>
       <td><b id="q_titles"><%= link_to question.q_title, question_path(question) %></b></td>
       <td><%= question.q_content %><br>

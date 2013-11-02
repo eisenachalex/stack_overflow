@@ -2,8 +2,8 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.order("votes ASC")
-
   end
+
   def create
     @question = Question.new(params[:question])
     @tags = params[:tags][:t_content].scan(/(\w+)/)
@@ -22,7 +22,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-
   def new
     if current_user
     @question = Question.new
@@ -38,7 +37,7 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
-     end
+  end
 
   def update
     @question = Question.find(params[:id])
@@ -51,6 +50,10 @@ class QuestionsController < ApplicationController
     Answer.delete_all(question_id: @question.id)
     @question.destroy
     redirect_to user_path
+  end
+
+  def vote
+
   end
 
 end
