@@ -17,6 +17,7 @@
 		<% end %>
   	</div>
 </p>
+<%= link_to "Add Comment", new_comment_path(answer) %>
 <% end %>
 
 <%= form_for([@question, @answer]) do |f| %><br>
