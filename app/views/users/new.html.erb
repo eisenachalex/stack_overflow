@@ -1,7 +1,7 @@
 
-<h1>Please sign up or log in </h1>
+<h1 class="welcome">Please sign up or log in </h1>
 
-
+<container class="left" id="signup">
 <%= form_for @user, html: { multipart: true } do |f| %>
   <p><%= f.text_field :email, placeholder: "email" %></p>
   <p><%= f.password_field :password, placeholder: "password" %></p>
@@ -13,4 +13,5 @@
   <p><%= f.submit "Create" %></p>
 
 <% end %>
+</container>
 

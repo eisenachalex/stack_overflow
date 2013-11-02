@@ -11,8 +11,8 @@ StackOverflow::Application.routes.draw do
   resources :questions do
     resources :answers
   end
-
   resources :tags
+  resources :badges
 
   root to: 'welcome#index'
 
