@@ -5,14 +5,19 @@ StackOverflow::Application.routes.draw do
   post 'sessions/new' => 'sessions#new', as: :login
   post 'search' => 'welcome#search'
 
+  post 'questions/:id' => 'questions#vote', as: :vote
+
   resources :users
   resources :questions do
     resources :answers
   end
+
   get '/comments/:answer_id' => 'comments#new', as: :new_comment
   post '/comments/:user_id/:answer_id' => 'comments#create', as: :comments
   resources :tags
   resources :comments
+  resources :badges
+
   root to: 'welcome#index'
 
 

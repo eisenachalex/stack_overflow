@@ -2,8 +2,8 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.order("votes ASC")
-
   end
+
   def create
     @question = Question.new(params[:question])
     @tags = params[:tags][:t_content].scan(/(\w+)/)
@@ -22,7 +22,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-
   def new
     if current_user
     @question = Question.new
@@ -38,7 +37,9 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
-     end
+
+    @tag = Tag.find(params[:id])
+  end
 
   def update
     @question = Question.find(params[:id])
@@ -51,6 +52,20 @@ class QuestionsController < ApplicationController
     Answer.delete_all(question_id: @question.id)
     @question.destroy
     redirect_to user_path
+  end
+
+  def vote
+      @question = Question.find(params[:id])
+      puts params
+      puts "----------------------------------------------------"
+      passed_data = params.first[0]
+      if request.xhr?
+        @question.update_attributes(votes: @question.votes += passed_data.to_i)
+        # render :nothing => true
+        # puts "-----------------------------------------------------------"
+        # puts @question.votes.to_json
+        render json: @question.votes.to_json
+      end
   end
 
 end

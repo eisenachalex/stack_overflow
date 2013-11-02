@@ -5,4 +5,5 @@ class TagsController < ApplicationController
 
     @questions = @tag.questions
   end
+
 end

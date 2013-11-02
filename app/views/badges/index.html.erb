@@ -1,0 +1,20 @@
+<h1 class="welcome">Badges</h1>
+<div>
+<container id="badge_container1" class="explain_badges">
+	<h3>The Unicorn Badge</h3>
+	<span class="badge"><%= image_tag "unicorn_badge.jpg" %></span><br><br>
+	<span>Awarded to users who ask at least one question</span>
+</container>
+<container id="badge_container2" class="explain_badges">
+	<h3>The America Badge</h3>
+  <span class="badge"><%= image_tag "eagle_badge.jpg" %></span><br><br>
+  <span>Awarded to users who have at least one upvote</span>
+</container>
+<container id="badge_container3" class="explain_badges">
+  <h3>The Cartman Badge</h3>
+  <span class="badge"><%= image_tag "cartman_badge.png" %></span><br><br>
+  <span>Awarded to users who have answered at least one question</span><br>
+</container>
+</div>
+
+<p class="edit_links" id="back_profile"><%= link_to "Back to your profile", user_path(current_user.id) %></p>

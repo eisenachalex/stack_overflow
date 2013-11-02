@@ -16,7 +16,7 @@ body {
   margin:0px;
   padding:0px;
   font-family: arial;
-  background-color:#e8e8e8
+  background-color:#e8e8e8;
 }
 
 header {
@@ -108,14 +108,12 @@ a {
 tr:before {
   border-top:1px solid gray;
 }
-td {
-  padding-left: 10px;
-  padding-right: 8px;
-}
+
+
 #search_form {
-float:right; 
+float:right;
 }
-#left {
+.left {
 float:left;
 margin-left: 80px;
 margin-right:40px;
@@ -123,6 +121,7 @@ margin-bottom: 40px;
 width: 40%;
 border: 3px solid white;
 background-color:gainsboro;
+box-shadow: 2px 2px 2px 2px #ccc;
 }
 #right {
 float:right;
@@ -131,6 +130,7 @@ margin-right:80px;
 border: 3px solid white;
 width: 40%;
 background-color:gainsboro;
+box-shadow: 2px 2px 2px 2px #ccc;
 }
 #personal_info {
   padding: 30px;
@@ -141,12 +141,16 @@ background-color:gainsboro;
   padding-top: 10px;
   height: 100%;
 }
-#welcome {
+.welcome {
   margin-left:80px;
   color:darkslategray;
 }
 #photo {
   text-align: center;
+}
+#photo img {
+  border: 3px solid white;
+  box-shadow: 2px 2px 2px 2px #ccc;
 }
 #personal_info_title {
   text-align: center;
@@ -159,8 +163,92 @@ background-color:gainsboro;
   margin-left: 30px;
   float:right;
 }
+.increase-vote img{
+  width:30px;
+  height:30px;
+  float:left;
+  clear:left;
+  text-align:center;
+}
 
+.decrease-vote img{
+  width:30px;
+  height:30px;
+  float:left;
+  clear:left;
+  text-align:center;
+}
 
+table {
+  border-collapse: separate;
+}
+#edit_profile {
+  padding: 30px;
+  padding-top: 20px;
+}
+#edit_profile_link {
+  float:right;
+}
+#signup {
+  padding-left: 30px;
+  padding-top: 10px;
+}
+#edit_question {
+  padding: 30px;
+  padding-top: 20px;
+}
+.explain_badges {
+  padding: 30px;
+  padding-top: 20px; 
+  text-align: center;
+}
+.badge img {
+  border-radius: 150px;
+  box-shadow: 4px 4px 4px 4px #ccc;
+  margin-left: 3px;
+  margin-right: 3px;
+  border: 3px solid gainsboro;
+}
+#badge_container1 {
+float:left;
+margin-left: 80px;
+margin-right: 50px;
+margin-bottom: 40px;
+padding-left: 20px;
+width: 20%;
+border: 3px solid white;
+background-color:gainsboro;
+box-shadow: 2px 2px 2px 2px #ccc;
+}
+#badge_container2 {
+float:left;
+margin-bottom: 40px;
+margin-right: 50px;
+padding-left: 20px;
+width: 20%;
+border: 3px solid white;
+background-color:gainsboro;
+box-shadow: 2px 2px 2px 2px #ccc;
+}
+#badge_container3 {
+float:left;
+margin-bottom: 40px;
+padding-left: 20px;
+width: 20%;
+border: 3px solid white;
+background-color:gainsboro;
+box-shadow: 2px 2px 2px 2px #ccc;
+}
+#back_profile {
+  clear:both;
+  margin-right: 20px;
+}
 
+td{
+  border-bottom:1px solid gray;
+  height: 110px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 

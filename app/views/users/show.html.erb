@@ -1,4 +1,4 @@
-<h1 id="welcome">Welcome back, 
+<h1 class="welcome">Welcome back, 
 	<% if @user.name %>
 			<%= @user.name %>!
 	<% else %>
@@ -6,7 +6,7 @@
 	<% end %>
 </h1>
 
-<container id="left">
+<container class="left">
 <div id="personal_info">
 <div id="photo">
   <% if @user.photo %>
@@ -20,22 +20,32 @@
   <strong>Birthday:</strong> <%= @user.date_of_birth %><br><br>
   <strong>Current city:</strong> <%= @user.current_city %><br><br>
   <strong>Interests:</strong> <%= @user.interests %><br><br>
-<%= link_to "Edit your profile", edit_user_path(@user) %>
+<div id="edit_profile_link"><%= link_to "Edit your profile", edit_user_path(@user) %></div>
 </div>
 </container>
 
 <container id="right">
 <div id="your_stuff">
+
+  <h2>Your badges:</h2>
+   <span class="badge"><%= image_tag "unicorn_badge.jpg" %></span>
+   <span class="badge"><%= image_tag "eagle_badge.jpg" %></span>
+   <span class="badge"><%= image_tag "cartman_badge.png" %></span><br><br>
+   <span class="delete_links"><%= link_to "Learn about badges", badges_path %></span><br>
   <h2>Your questions:</h2>
     <% @questions.each do |question| %>
     <strong><%= question.q_title %></strong><br/>
     <%= question.q_content %><br/>
+    <% question.tags.each do |tag| %>
+        <%= render partial: "tags/tag_button", locals: {tag: tag} %>
+        <% end %>
+        <br>
 
     <span class="delete_links">
     <%= link_to "Delete", question_path(question), method: :delete,
                                                     confirm: "Are you sure?" %></span>
     <span class="edit_links">
-    <%= link_to "Edit", edit_question_path(question) %></span><br><br><br>
+    <%= link_to "Edit", edit_question_path(question) %></span><br>
   <% end %>
 
 
@@ -50,6 +60,7 @@
     <span class="edit_links">
     <%= link_to "Edit", edit_question_answer_path(answer.question_id, answer) %></span><br><br><br>
     <% end %>
+
     
     
       <h2>Your Comments:</h2>
@@ -62,6 +73,7 @@
     <span class="edit_links">
     <%= link_to "Edit", edit_comment_path(comment.id) %></span><br><br><br>
     <% end %>
+
 </div>
 </container>
 
