@@ -11,6 +11,7 @@ StackOverflow::Application.routes.draw do
   end
 
   resources :tags
+  resources :comments
 
   root to: 'welcome#index'
 
