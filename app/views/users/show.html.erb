@@ -1,28 +1,53 @@
-<h1>Profile Page</h1>
+<h1 id="welcome">Welcome back, 
+	<% if @user.name %>
+			<%= @user.name %>!
+	<% else %>
+			<%= @user.email %>!
+	<% end %>
+</h1>
 
-<b>Welcome back, <%= @user.email %></b>
-
-<p>
+<container id="left">
+<div id="personal_info">
+<div id="photo">
   <% if @user.photo %>
     <%= image_tag(@user.photo.file.url(:thumb)) %>
   <% else %>
     <%= image_tag "silhouette.jpg" %>
   <% end %>
-</p>
+</div>
+  <h2 id="personal_info_title">Personal information</h2>
+  <strong>Website:</strong> <%= @user.website %><br><br>
+  <strong>Birthday:</strong> <%= @user.date_of_birth %><br><br>
+  <strong>Current city:</strong> <%= @user.current_city %><br><br>
+  <strong>Interests:</strong> <%= @user.interests %><br><br>
+<%= link_to "Edit your profile", edit_user_path(@user) %>
+</div>
+</container>
 
-<h3>Your questions:</h3>
-<% @questions.each do |question| %>
-<%= question.q_title %><br/>
-<%= question.q_content %><br/>
-<%= link_to "Edit", edit_question_path(question) %>
-<%= link_to "destroy", question_path(question), method: :delete,
-    confirm: "Are you sure?" %><br><br>
-<% end %>
+<container id="right">
+<div id="your_stuff">
+  <h2>Your questions:</h2>
+    <% @questions.each do |question| %>
+    <strong><%= question.q_title %></strong><br/>
+    <%= question.q_content %><br/>
 
-<h3>Your answers</h3>
-<% @answers.each do |answer| %>
-<%= answer.a_content %><br/>
-<%= link_to "Edit", edit_question_answer_path(answer.question_id, answer) %>
-<%= link_to "destroy", question_answer_path(answer.question_id, answer), method: :delete,
-    confirm: "Are you sure?" %><br><br>
-<% end %>
+    <span class="delete_links">
+    <%= link_to "Delete", question_path(question), method: :delete,
+                                                    confirm: "Are you sure?" %></span>
+    <span class="edit_links">
+    <%= link_to "Edit", edit_question_path(question) %></span><br><br><br>
+  <% end %>
+
+  <h2>Your answers:</h2>
+    <% @answers.each do |answer| %>
+    <%= answer.a_content %><br/>
+
+    <span class="delete_links">
+    <%= link_to "Delete", question_answer_path(answer.question_id, answer), method: :delete,
+                            confirm: "Are you sure?" %></span>
+    <span class="edit_links">
+    <%= link_to "Edit", edit_question_answer_path(answer.question_id, answer) %></span><br><br><br>
+    <% end %>
+</div>
+</container>
+
