@@ -9,7 +9,15 @@
   <%= answer.a_content %> <br>
   <%= answer.user.email if @question.user %>
   <%= time_ago_in_words(answer.created_at) %>
+  	<div style="color:Red;font-size:11px;margin-left:20px;width:400px;">
+  		<% answer.comments.each do |comment| %>
+  		<%= comment.c_content %><br/>
+  		<span style="color:black"> <%= User.find(comment.user_id).email %>
+  		  <%= time_ago_in_words(comment.created_at) %></span><br/><br/>
+		<% end %>
+  	</div>
 </p>
+<%= link_to "Add Comment", new_comment_path(answer) %>
 <% end %>
 
 <%= form_for([@question, @answer]) do |f| %><br>

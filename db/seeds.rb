@@ -19,3 +19,10 @@
     end
   end
 end
+
+
+500.times do 
+content = Faker::Lorem.paragraph
+Comment.create(user_id: rand(1..10), answer_id: rand(1..1000), c_content: content)
+
+end

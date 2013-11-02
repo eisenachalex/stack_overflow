@@ -1,0 +1,8 @@
+<h1>Comment on..</h1>
+<%= @answer.a_content %> 
+
+<h3>Your Comments..</h3>
+<%= form_for @comment, url: comments_path(current_user, @answer)  do |f| %>
+<%= f.text_area :c_content , size: "60x12"%><br/>
+<%= f.submit %>
+<% end %>

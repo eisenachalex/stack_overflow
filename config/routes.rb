@@ -11,9 +11,10 @@ StackOverflow::Application.routes.draw do
   resources :questions do
     resources :answers
   end
-
+  get '/comments/:answer_id' => 'comments#new', as: :new_comment
+  post '/comments/:user_id/:answer_id' => 'comments#create', as: :comments
   resources :tags
-
+  resources :comments
   root to: 'welcome#index'
 
 

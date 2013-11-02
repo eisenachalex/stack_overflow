@@ -38,7 +38,9 @@
     <%= link_to "Edit", edit_question_path(question) %></span><br><br><br>
   <% end %>
 
-  <h2>Your answers:</h2>
+
+    
+      <h2>Your answers:</h2>
     <% @answers.each do |answer| %>
     <%= answer.a_content %><br/>
 
@@ -47,6 +49,18 @@
                             confirm: "Are you sure?" %></span>
     <span class="edit_links">
     <%= link_to "Edit", edit_question_answer_path(answer.question_id, answer) %></span><br><br><br>
+    <% end %>
+    
+    
+      <h2>Your Comments:</h2>
+    <% @comments.each do |comment| %>
+    <%= comment.c_content %><br/>
+
+    <span class="delete_links">
+    <%= link_to "Delete", comment_path(comment.id), method: :delete,
+                            confirm: "Are you sure?" %></span>
+    <span class="edit_links">
+    <%= link_to "Edit", edit_comment_path(comment.id) %></span><br><br><br>
     <% end %>
 </div>
 </container>

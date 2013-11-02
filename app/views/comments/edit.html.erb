@@ -1,0 +1,6 @@
+<h1>Edit comment..<h1>
+
+<%= form_for @comment do |f| %>
+  <%= f.text_area :c_content, placeholder: 'content', size: "60x12" %><br>
+  <%= f.submit %>
+<% end %>
