@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @questions = Question.where(user_id: @user.id)
     @answers = Answer.where(user_id: @user.id)
     @comments = Comment.where(user_id: @user.id)
+    
   end
 
   def edit

@@ -1,4 +1,6 @@
-<b>
+<h1 class="welcome">Ask a question</span></h1>
+
+<container class="left" id="edit_question">
 
 <%= form_for @question do |f| %>
   <% @question.errors.each do |attr, msg| %>
@@ -16,3 +18,4 @@
     <%= f.submit %>
   </p>
 <% end %>
+</container>

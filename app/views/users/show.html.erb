@@ -28,9 +28,15 @@
 <div id="your_stuff">
 
   <h2>Your badges:</h2>
-   <span class="badge"><%= image_tag "unicorn_badge.jpg" %></span>
-   <span class="badge"><%= image_tag "eagle_badge.jpg" %></span>
-   <span class="badge"><%= image_tag "cartman_badge.png" %></span><br><br>
+  <% if @user.questions.count > 1 %>
+    <span class="badge"><%= image_tag "unicorn_badge.jpg" %></span>
+  <% end %>
+
+    <span class="badge"><%= image_tag "eagle_badge.jpg" %></span>
+
+  <% if @user.answers.count > 1 %>
+    <span class="badge"><%= image_tag "cartman_badge.png" %></span><br><br>
+  <% end %>
    <span class="delete_links"><%= link_to "Learn about badges", badges_path %></span><br>
   <h2>Your questions:</h2>
     <% @questions.each do |question| %>

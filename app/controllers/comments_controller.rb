@@ -27,13 +27,15 @@ class CommentsController < ApplicationController
 	end
 		
  	def update
-    	@comment = Comment.find(params[:id])
-    	@comment.update_attributes(params[:comment])
-    	redirect_to user_path
-    end
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes(params[:comment])
+    redirect_to user_path
+   end
+
 	def destroy
 		@comment = Comment.find(params[:id])
     	@comment.destroy
     	redirect_to user_path
 	end
+	
 end
