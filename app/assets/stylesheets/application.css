@@ -73,6 +73,15 @@ a {
 #q_titles a:hover {
   color: #828CBD;
 }
+.index_question {
+  padding-left: 40px;
+}
+#number_answers {
+  text-align: center;
+}
+#votes_buttons {
+  padding-left: 10px;
+}
 .container {
   margin:10px;
   margin-top:2px;
@@ -210,45 +219,70 @@ table {
   border: 3px solid gainsboro;
 }
 #badge_container1 {
-float:left;
-margin-left: 80px;
-margin-right: 50px;
-margin-bottom: 40px;
-padding-left: 20px;
-width: 20%;
-border: 3px solid white;
-background-color:gainsboro;
-box-shadow: 2px 2px 2px 2px #ccc;
+  float:left;
+  margin-left: 80px;
+  margin-right: 50px;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  width: 20%;
+  border: 3px solid white;
+  background-color:gainsboro;
+  box-shadow: 2px 2px 2px 2px #ccc;
 }
 #badge_container2 {
-float:left;
-margin-bottom: 40px;
-margin-right: 50px;
-padding-left: 20px;
-width: 20%;
-border: 3px solid white;
-background-color:gainsboro;
-box-shadow: 2px 2px 2px 2px #ccc;
+  float:left;
+  margin-bottom: 40px;
+  margin-right: 50px;
+  padding-left: 20px;
+  width: 20%;
+  border: 3px solid white;
+  background-color:gainsboro;
+  box-shadow: 2px 2px 2px 2px #ccc;
 }
 #badge_container3 {
-float:left;
-margin-bottom: 40px;
-padding-left: 20px;
-width: 20%;
-border: 3px solid white;
-background-color:gainsboro;
-box-shadow: 2px 2px 2px 2px #ccc;
+  float:left;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  width: 20%;
+  border: 3px solid white;
+  background-color:gainsboro;
+  box-shadow: 2px 2px 2px 2px #ccc;
 }
 #back_profile {
   clear:both;
-  margin-right: 20px;
+  float:left;
+  margin-left: 80px;
 }
-
 td{
   border-bottom:1px solid gray;
   height: 110px;
   padding-top: 30px;
   padding-bottom: 30px;
 }
+#show_question {
+  font-size: 20px;
+  font-weight: bold;
+}
+.display_questions {
+  float:left;
+  margin-left: 80px;
+  margin-right:40px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  width: 80%;
+  border: 3px solid white;
+  background-color:gainsboro;
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
+#display_questions {
+  padding: 30px;
+  padding-top: 20px;
+}
+#add_comment_link {
+  margin-left: 20px;
+  font-size: 12px;
+
+}
+
 
 
