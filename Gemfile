@@ -8,7 +8,9 @@ gem 'factory_girl_rails'
 
 gem 'faker'
 
-gem 'sqlite3'
+gem 'pg'
+gem 'rails_12factor', group: :production
+
 
 gem 'carrierwave'
 gem 'mini_magick'
@@ -35,4 +37,6 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
 end
+
+ruby '1.9.3'
 
